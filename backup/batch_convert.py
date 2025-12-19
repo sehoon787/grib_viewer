@@ -17,8 +17,8 @@ from rasterio.crs import CRS
 
 def ensure_result_dir():
     """result 디렉토리 생성"""
-    if not os.path.exists('result'):
-        os.makedirs('result')
+    if not os.path.exists('../result'):
+        os.makedirs('../result')
 
 
 def convert_to_geotiff(grib_file, output_file):
@@ -64,7 +64,7 @@ def convert_to_geotiff(grib_file, output_file):
 
 def main():
     """메인 함수"""
-    data_dir = Path('data/201501')
+    data_dir = Path('../data/201501')
 
     if not data_dir.exists():
         print(f"[ERROR] 디렉토리를 찾을 수 없습니다: {data_dir}")
@@ -98,7 +98,7 @@ def main():
     for idx, grib_file in enumerate(grib_files, 1):
         filename = grib_file.name
         output_filename = filename.replace('.201501', '_201501') + '.tif'
-        output_file = Path('result') / output_filename
+        output_file = Path('../result') / output_filename
 
         print(f"[{idx}/{total_files}] {filename}")
         print(f"  → {output_filename}")

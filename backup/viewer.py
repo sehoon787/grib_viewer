@@ -55,8 +55,8 @@ def get_param_name(code):
 
 def ensure_result_dir():
     """result 디렉토리 생성"""
-    if not os.path.exists('result'):
-        os.makedirs('result')
+    if not os.path.exists('../result'):
+        os.makedirs('../result')
         print("result/ 디렉토리를 생성했습니다.")
 
 
@@ -458,7 +458,7 @@ def main():
         output_path = args.output
         if output_path and not output_path.startswith('result/'):
             # output 경로가 지정되었지만 result/ 아래가 아니면 자동으로 추가
-            output_path = os.path.join('result', os.path.basename(output_path))
+            output_path = os.path.join('../result', os.path.basename(output_path))
         visualize(args.file, output_path)
 
 

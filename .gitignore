@@ -30,3 +30,4 @@ result/
 *.log
 /data/
 /.claude/
+/checkpoint.json
